@@ -13,7 +13,7 @@ namespace Course.Services.Catalog.Mapping
     {
         public GeneralMapping()
         {
-            CreateMap<Course, CourseDto>().ReverseMap();
+            CreateMap<Course.Services.Catalog.Models.Course, CourseDto>().ReverseMap();
             CreateMap<Category, CategoryDto>().ReverseMap();
             CreateMap<Feature, FeatureDto>().ReverseMap();
         }
