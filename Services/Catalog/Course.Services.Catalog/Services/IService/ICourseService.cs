@@ -11,7 +11,7 @@ namespace Course.Services.Catalog.Services.IService
     {
         Task<Response<List<CourseDto>>> GetAllAsync();
         Task<Response<CourseDto>> GetByIdAsync(string id);
-        Task<Response<CourseDto>> GetAllByUserId(string userId);
+        Task<Response<CourseDto>> GetAllByUserIdAsync(string userId);
         Task<Response<CourseDto>> CreateAsync(CourseCreateDto courseCreateDto);
         Task<Response<NoContent>> UpdateAsync(Course.Services.Catalog.Dtos.CourseDto.CategoryUpdateDtos courseUpdateDto);
         Task<Response<NoContent>> DeleteAsync(string id);

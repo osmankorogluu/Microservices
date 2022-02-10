@@ -37,6 +37,7 @@ namespace Course.Services.Catalog
             {
                 return p.GetRequiredService<IOptions<DatabaseSettings>>().Value;
             });
+            //Injection
             services.AddSingleton<ICategoryService, CategoryService>();
             services.AddSingleton<ICourseService, CourseService>();
             services.AddControllers();
@@ -46,7 +47,7 @@ namespace Course.Services.Catalog
             });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Course.Services.Catalog.Dtos.CategoryDto;
+using Course.Services.Catalog.Dtos.FeatureDto;
 using Course.Services.Catalog.Models;
 using System;
 using System.Collections.Generic;

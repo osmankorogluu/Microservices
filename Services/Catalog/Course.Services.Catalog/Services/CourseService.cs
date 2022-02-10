@@ -10,6 +10,7 @@ using Course.Shared.Dtos;
 using Course.Services.Catalog.Dtos.CategoryDto;
 using Course.Services.Catalog.Services.IService;
 
+
 namespace Course.Services.Catalog.Services
 {
     public class CourseService:ICourseService
@@ -56,7 +57,7 @@ namespace Course.Services.Catalog.Services
             return Response<CourseDto>.Success(_mapper.Map<CourseDto>(result), 200);
         }
 
-        public async Task<Response<CourseDto>> GetAllByUserId(string userId)
+        public async Task<Response<CourseDto>> GetAllByUserIdAsync(string userId)
         {
             var result = await _courseCollection.Find<Course.Services.Catalog.Models.Course>(x => x.Id == userId).ToListAsync();
             if (result.Any())
@@ -106,7 +107,7 @@ namespace Course.Services.Catalog.Services
             }
             else
             {
-                return Response<NoContent>.Fail("Course not found.", 404);
+                return Response<NoContent>.Fail("Course Not Found.", 404);
             }
         }
 

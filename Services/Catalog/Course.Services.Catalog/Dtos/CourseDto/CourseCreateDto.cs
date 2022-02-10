@@ -12,7 +12,7 @@ namespace Course.Services.Catalog.Dtos.CategoryDto
         public string Description { get; set; }
         public string UserId { get; set; }
         public string Picture { get; set; }
-        public FeatureDto FeatureDto { get; set; }
+        public Course.Services.Catalog.Dtos.FeatureDto.FeatureDto FeatureDto { get; set; }
         public string CategoryId { get; set; }
     }
 }
