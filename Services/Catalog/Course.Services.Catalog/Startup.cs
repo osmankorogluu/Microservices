@@ -1,3 +1,4 @@
+using Course.Services.Catalog.Services;
 using Course.Services.Catalog.Settings;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -35,6 +36,7 @@ namespace Course.Services.Catalog
             {
                 return p.GetRequiredService<IOptions<DatabaseSettings>>().Value;
             });
+            services.AddSingleton<ICategoryService, CategoryService>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
