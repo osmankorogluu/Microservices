@@ -15,7 +15,7 @@ namespace Course.Services.Catalog.Dtos.CategoryDto
         public string UserId { get; set; }
         public string Picture { get; set; }
         public DateTime CreatedTime { get; set; }
-        public FeatureDto FeatureDto { get; set; }
+        public Course.Services.Catalog.Dtos.FeatureDto.FeatureDto FeatureDto { get; set; }
         public string CategoryId { get; set; }
         public CategoryDto CategoryDto { get; set; }
     }
