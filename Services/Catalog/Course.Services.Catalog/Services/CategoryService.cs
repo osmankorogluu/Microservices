@@ -30,10 +30,11 @@ namespace Course.Services.Catalog.Services
             return Response<List<CategoryDto>>.Success(_mapper.Map<List<CategoryDto>>(result), 200);
         }
 
-        public async Task<Response<CategoryCreateDto>> CreateAsync(Category category)
+        public async Task<Response<CategoryDto>> CreateAsync(CategoryDto categoryDto)
         {
-            await _categoryCollection.InsertOneAsync(category);
-            return Response<CategoryCreateDto>.Success(_mapper.Map<CategoryCreateDto>(category), 200);
+            var result = _mapper.Map<Category>(categoryDto);
+            await _categoryCollection.InsertOneAsync(result);
+            return Response<CategoryDto>.Success(_mapper.Map<CategoryDto>(result), 200);
         }
 
         public async Task<Response<CategoryDto>> GetByIdAsync(string id)
