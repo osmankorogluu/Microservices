@@ -20,13 +20,17 @@ namespace Course.Services.Catalog.Controllers
         {
             _categoryService = categoryService;
         }
+
+        [HttpGet]
+        [Route("Getall")]
         public async Task<IActionResult> GetAll()
         {
             var result = await _categoryService.GetAllAsync();
             return CreateActionResultInstance(result);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet]
+        [Route("GetById")]
         public async Task<IActionResult> GetById(string id)
         {
             var result = await _categoryService.GetByIdAsync(id);
@@ -34,6 +38,7 @@ namespace Course.Services.Catalog.Controllers
         }
 
         [HttpPost]
+        [Route("Create")]
         public async Task<IActionResult> Create(CategoryDto categoryDto)
         {
             var result = await _categoryService.CreateAsync(categoryDto);

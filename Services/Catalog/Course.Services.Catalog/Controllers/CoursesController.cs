@@ -21,21 +21,25 @@ namespace Course.Services.Catalog.Controllers
         {
             _courseService = courseService;
         }
+
         [HttpGet]
+        [Route("GetAll")]
         public async Task<IActionResult> GetAll()
         {
             var result = await _courseService.GetAllAsync();
             return CreateActionResultInstance(result);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet]
+        [Route("GetById")]
         public async Task<IActionResult> GetById(string id)
         {
             var result = await _courseService.GetByIdAsync(id);
             return CreateActionResultInstance(result);
         }
 
-        [Route("/api/[controller]/GetAllByUserId/{userId}")]
+        [HttpGet]
+        [Route("GetAllByUserId")]
         public async Task<IActionResult> GetAllByUserId(string userId)
         {
             var result = await _courseService.GetAllByUserIdAsync(userId);
@@ -43,6 +47,7 @@ namespace Course.Services.Catalog.Controllers
         }
 
         [HttpPost]
+        [Route("Create")]
         public async Task<IActionResult> Create(CourseCreateDto courseCreateDto)
         {
             var result = await _courseService.CreateAsync(courseCreateDto);
@@ -50,13 +55,15 @@ namespace Course.Services.Catalog.Controllers
         }
 
         [HttpPost]
+        [Route("Update")]
         public async Task<IActionResult> Update(CategoryUpdateDtos categoryUpdateDtos)
         {
             var result = await _courseService.UpdateAsync(categoryUpdateDtos);
             return CreateActionResultInstance(result);
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete]
+        [Route("Delete")]
         public async Task<IActionResult> Delete(string id)
         {
             var result = await _courseService.DeleteAsync(id);
