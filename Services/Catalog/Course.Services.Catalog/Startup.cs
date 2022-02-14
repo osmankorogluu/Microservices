@@ -16,7 +16,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace Course.Services.Catalog
-{
+{//
     public class Startup
     {
         public Startup(IConfiguration configuration)
